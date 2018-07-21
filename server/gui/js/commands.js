@@ -26,5 +26,22 @@ $(document).ready(function() {
     $("#intro").click(function() {
         console.log("Clicked: Intro");
         ws.send('intro');
+    });
+
+    $("#text").click(function() {
+        console.log("Clicked: Text");
+        let primary = $("#textPrim").val();
+        let secondary = $("#textSec").val();        
+        ws.send("text|" + primary + "|" + secondary);
+    });
+
+    $("#weather").click(function() {
+        console.log("Clicked: Text");
+        let temp = $("#weatherTemp").val();
+        let hum = $("#weatherHum").val();        
+        let prec = $("#weatherPrecipitation").val();
+        let wind = $("#weatherWind").val();
+        let type = $("#weatherType").val();
+        ws.send("weather|" + temp + "|" + hum + "|" + prec + "|" + wind + "|" + type);
     })
 })

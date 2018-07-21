@@ -13,3 +13,8 @@ button#clear {
     background: red;
     color: yellow;
 }
+
+input, select {
+    font-size: 24px;
+    padding: 6px;
+}

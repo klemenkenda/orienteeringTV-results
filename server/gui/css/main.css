@@ -16,7 +16,7 @@ body {
     text-align: center;
     padding: 5px;
     padding-top: 10px;
-    bottom: 100px;
+    bottom: 120px;
     position: absolute;
     left: calc((100% - 1010px)/2);
 }
@@ -72,4 +72,40 @@ td {
 
 .td-center {
     text-align: right;
+}
+
+#div-text {
+    margin-left: 120px;
+    margin-top: 120px;
+    padding: 30px;
+    background: #cccccc;
+    border-top: 5px solid #dd0000;
+    color: black;
+    display: inline-block;
+}
+
+#div-text h1, #div-text h2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+#div-weather {
+    background: #cccccc;
+    border-top: 5px solid #dd0000;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    width: 400px;
+    right: 120px;
+    top: 120px;
+    padding: 30px;
+    font-weight: bold;
+}
+
+#div-weather h1 {
+    font-size: 36px;
+}
+
+#div-weather td {
+    font-size: 30px;
 }

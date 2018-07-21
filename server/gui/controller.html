@@ -8,11 +8,39 @@
     
 </head>
 <body>
+    <h2>Orienteering TV control centre</h2>
     <button id="clear">Clear</button>
-    <hr>
-    <button id="intro">Intro</button>
-    <button id="weather">Weather</button>    
+    <button id="intro">Intro</button>  
     <button id="credits">Credits</button>
+    <button id="text">Text</button>
+    <input id="textPrim" placeholder="First line">
+    <input id="textSec" placeholder="Second line">
     <hr>
+    <button id="weather">Weather</button>  
+    <input id="weatherTemp" placeholder="Temp" type="text" size="6">
+    <input id="weatherHum" placeholder="Hum" type="text" size="6">
+    <input id="weatherPrecipitation" placeholder="Prec" type="text" size="6">
+    <input id="weatherWind" placeholder="Wind" type="text" size="6">
+    <input id="weatherType" placeholder="Type" type="text" size="10">
+    <hr>
+    Lists (based on liveresults.orientering.se):<br>
+    <select id="category">
+        <option value="M21E">M21E</option>
+        <option value="W21E">W21E</option>
+    </select>
+    <input id="compId" placeholder="compId" type="text" size="5">
+    <button id="refresh">Refresh DB</button>
+    <button id="start">Start</button>
+    <button id="intermediate1">Intermediate 1</button>
+    <button id="intermediate2">Intermediate 1</button>
+    <button id="finish">Finish</button>
+    <hr>
+    Runners:<br>
+    <input id="finishId" type="text" size="4" placeholder="StNo">
+    <button id="start">Start</button>
+    <button id="intermediate1">Intermediate 1</button>
+    <button id="intermediate2">Intermediate 1</button>
+    <button id="finish">Finish</button>
+
 </body>
 </html>
