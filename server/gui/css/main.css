@@ -1,0 +1,75 @@
+body {
+    background: #00ff00;
+    background-image: url('/img/background/foto1.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+.div-title {
+    background: #dd0000;
+    color: white;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 5px;
+    padding-top: 10px;
+    bottom: 100px;
+    position: absolute;
+    left: calc((100% - 1010px)/2);
+}
+
+.div-title h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.h1-distance {
+    font-weight: 400;
+    color: #ffff00;
+    margin-bottom: 10px !important;
+    font-size: 28px;
+}
+
+.div-title-intro {
+    background: #bbbbbb;
+    padding: 40px;
+    font-size: 30px;
+    text-align: left;
+    color: black;
+    width: 500px;
+    float: left;
+    box-sizing: border-box;
+    height: 235px;
+    line-height: 42px;
+}
+
+.div-courses {
+    background: #bbbbbb;
+    padding: 40px;
+    font-size: 30px;
+    text-align: left;
+    color: black;
+    width: 500px;
+    float: left;
+    box-sizing: border-box;
+    height: 235px;
+}
+
+.table-courses {
+    border-collapse: collapse;
+    background: #ccc !important;
+    border: 3px solid #ccc;
+}
+
+td {
+    font-size: 24px;
+    width: 150px;
+    padding: 5px;
+}
+
+.td-center {
+    text-align: right;
+}

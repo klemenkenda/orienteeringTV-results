@@ -1,0 +1,15 @@
+body {
+    background: #eeeeee;
+    font-family: Roboto, sans-serif;
+    font-size: 24pt;
+}
+
+button {
+    font-size: 14pt;
+    padding: 10px;
+}
+
+button#clear {
+    background: red;
+    color: yellow;
+}
