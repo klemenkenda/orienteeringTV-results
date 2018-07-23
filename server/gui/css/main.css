@@ -1,9 +1,9 @@
 body {
     background: #00ff00;
-    background-image: url('/img/background/foto1.jpg');
+    1background-image: url('/img/background/foto1.jpg');
     background-size: cover;
     background-position: center;
-    font-family: Roboto, sans-serif;
+    font-family: Raleway, sans-serif;
     box-sizing: border-box;
 }
 
@@ -108,4 +108,46 @@ td {
 
 #div-weather td {
     font-size: 30px;
+}
+
+#div-runner {
+    position: absolute;
+    right: 120px;
+    bottom: 120px;
+    width: 920px;
+    padding: 10px;
+    background: #cccccc;
+    border-top: 5px solid #dd0000;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#div-runner-name, #div-runner-club, #div-runner-time {
+    display: inline-block;
+}
+
+#div-runner-name {
+    width: 500px;
+}
+
+#div-runner-club {
+    width: 270px;
+}
+
+#div-runner-time {
+    width: 100px;
+    text-align: right;
+}
+
+#div-runner-next {
+    background: black;
+    width: 143px;
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+    position: absolute;
+    top: -29px;
+    left: 0px;
 }

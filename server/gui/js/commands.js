@@ -36,12 +36,30 @@ $(document).ready(function() {
     });
 
     $("#weather").click(function() {
-        console.log("Clicked: Text");
+        console.log("Clicked: Weather");
         let temp = $("#weatherTemp").val();
         let hum = $("#weatherHum").val();        
         let prec = $("#weatherPrecipitation").val();
         let wind = $("#weatherWind").val();
         let type = $("#weatherType").val();
         ws.send("weather|" + temp + "|" + hum + "|" + prec + "|" + wind + "|" + type);
+    });
+
+    $("#refresh").click(function() {
+        console.log("Clicked: Refresh");
+        let compId = $("#compId").val();
+        let cat = $("#category").val();
+        ws.send("refresh|" + cat + "|" + compId);
+    });
+
+    $("#start").click(function() {
+        console.log("Clicked: Start list");
+        ws.send("start");
+    })
+
+    $("#rStart").click(function() {
+        console.log("Clicked: Runner Start");
+        let min = $("#min").val();
+        ws.send("rStart|" + min);
     })
 })

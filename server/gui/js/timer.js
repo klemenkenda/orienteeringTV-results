@@ -1,8 +1,10 @@
 class Timer {
     constructor(c, str) {
+        console.log("Creating timer.");
         this.controller = c;
         console.log("Setting zero time: " + str);
-        this.time = this.parseTime(str);
+        this.startTime = this.parseTime(str);
+        c.rememberTimer(this);
     }
 
     parseTime(str) {
@@ -24,6 +26,11 @@ class Timer {
         // console.log(this.elapsed);
         // call controller callback
         this.controller.onTimeUpdate();
+    }
+
+    getZeroStartTime() {
+        let d = this.startTime;
+        return ((d.getHours() * 60 + d.getMinutes()) * 60 + d.getSeconds()) * 100;
     }
 
     setZero(str) {
