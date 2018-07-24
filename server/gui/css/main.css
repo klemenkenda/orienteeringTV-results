@@ -116,12 +116,12 @@ td {
     position: absolute;
     right: 120px;
     bottom: 120px;
-    width: 920px;
+    width: 1420px;
     padding: 10px;
     background: #efeeee;
-    border-top: 5px solid #d91516;
+    border-top: 8px solid #d91516;
     color: black;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -131,25 +131,25 @@ td {
 }
 
 #div-runner-name {
-    width: 500px;
+    width: 700px;
 }
 
 #div-runner-club {
-    width: 270px;
+    width: 470px;
 }
 
 #div-runner-time {
-    width: 100px;
+    width: 225px;
     text-align: right;
 }
 
 #div-runner-next {
     background: black;
-    width: 143px;
+    width: 218px;
     color: white;
-    font-size: 20px;
-    padding-left: 10px;
+    font-size: 30px;
+    padding-left: 15px;
     position: absolute;
-    top: -29px;
+    top: -45px;
     left: 0px;
 }
