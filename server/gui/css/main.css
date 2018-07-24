@@ -1,6 +1,6 @@
 body {
     background: #00ff00;
-    1background-image: url('/img/background/foto1.jpg');
+    background-image: url('/img/background/foto1.jpg');
     background-size: cover;
     background-position: center;
     font-family: Raleway, sans-serif;
@@ -119,7 +119,7 @@ td {
     background: #cccccc;
     border-top: 5px solid #dd0000;
     color: black;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     text-transform: uppercase;
 }
