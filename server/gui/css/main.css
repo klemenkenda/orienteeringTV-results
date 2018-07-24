@@ -22,10 +22,17 @@ body {
     left: calc((100% - 1400px)/2);
 }
 
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
 .div-title h1 {
     margin: 0;
     padding: 0;
-    font-size: 40px;
 }
 
 .h1-distance {
