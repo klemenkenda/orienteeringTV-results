@@ -93,23 +93,32 @@ td {
 
 #div-weather {
     background: #efeeee;
-    border-top: 5px solid #d91516;
+    border-top: 8px solid #d91516;
     color: black;
-    font-size: 30px;
+    font-size: 50px;
     position: absolute;
-    width: 400px;
+    width: 500px;
     right: 120px;
     top: 120px;
     padding: 30px;
     font-weight: bold;
 }
 
+#div-weather table {
+    width: 500px;
+}
+
 #div-weather h1 {
-    font-size: 36px;
+    font-size: 50px;
 }
 
 #div-weather td {
-    font-size: 30px;
+    font-size: 40px;
+    border-bottom: 1px solid #dddddd;
+}
+
+#div-weather tr:last-child td {
+    border-bottom: 0px solid white !important;
 }
 
 #div-runner {
