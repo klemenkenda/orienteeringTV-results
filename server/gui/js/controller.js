@@ -69,6 +69,13 @@ class Controller {
         });
     };
 
+    startList() {
+        // order by start times
+        // generate list
+        // display list
+        // animate
+    }
+
     runnerStart(min) {
         console.log("Find starting runner: " + min);
         let zeroStartTime = this.timer.getZeroStartTime();

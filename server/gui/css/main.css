@@ -8,8 +8,9 @@ body {
 }
 
 .div-title {
-    background: #d91516;
-    color: white;
+    border-top: 8px solid #d91516;
+    background: #efeeee;
+    color: black;
     width: 1400px;
     margin-left: auto;
     margin-right: auto;
@@ -37,9 +38,10 @@ h2 {
 
 .h1-distance {
     font-weight: 400;
-    color: #ffff00;
+    color: #d91516;
     margin-bottom: 10px !important;
     font-size: 37px;
+    padding-top: 40px !important;
 }
 
 .div-title-intro {
@@ -48,39 +50,55 @@ h2 {
     font-size: 40px;
     text-align: left;
     color: black;
-    width: 900px;
+    width: 800px;
     float: left;
     box-sizing: border-box;
     height: 500px;
     line-height: 52px;
 }
 
+.div-intro-footer {
+    font-size: 30px; 
+    font-family: Roboto, sans-serif; 
+    margin-top: 100px; 
+    padding: 5px; 
+    float: none; 
+    background: #efeeee; 
+    font-weight: bold; 
+    color: black;
+    text-align: right;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    color: #666;
+}
+
 .div-courses {
     background: #efeeee;
     padding: 40px;
+    padding-left: 0px;
     font-size: 30px;
     text-align: left;
     color: black;
-    width: 500px;
+    width: 600px;
     float: left;
     box-sizing: border-box;
     height: 500px;
 }
 
 .table-intro {
-    width: 900px;
+    width: 710px;
     font-size: 50px;
 }
 
 .table-intro tr td:first-child {
-    width: 420px;
+    width: 370px;
 }
 
 .table-intro tr td:last-child {
-    width: 480px;
+    width: 340px;
 }
 
-.table-intro td {
+.table-intro td, .table-courses td {
     border-bottom: 1px solid #dddddd;
     font-size: 50px;
     vertical-align: top;
@@ -89,11 +107,11 @@ h2 {
 .table-courses {
     border-collapse: collapse;
     background: #efeeee !important;
-    border: 3px solid #efeeee;
+    width: 560px;
 }
 
 td {
-    font-size: 24px;
+    font-size: 50px;
     width: 150px;
     padding: 5px;
 }
@@ -107,7 +125,7 @@ td {
     margin-top: 120px;
     padding: 30px;
     background: #efeeee;
-    border-top: 5px solid #d91516;
+    border-top: 8px solid #d91516;
     color: black;
     display: inline-block;
 }
