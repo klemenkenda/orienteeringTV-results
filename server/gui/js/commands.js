@@ -28,6 +28,11 @@ $(document).ready(function() {
         ws.send('intro');
     });
 
+    $("#credits").click(function() {
+        console.log("Clicked: Credits");
+        ws.send('credits');
+    });
+
     $("#text").click(function() {
         console.log("Clicked: Text");
         let primary = $("#textPrim").val();

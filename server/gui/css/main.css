@@ -1,6 +1,6 @@
 body {
-    background: #00ff00;
-    background-image: url('/img/background/foto1.jpg');
+    background: #000;
+    b1ackground-image: url('/img/background/foto1.jpg');
     background-size: cover;
     background-position: center;
     font-family: Roboto, sans-serif;
@@ -10,7 +10,7 @@ body {
 .div-title {
     border-top: 8px solid #d91516;
     background: #efeeee;
-    color: black;
+    color: #222;
     width: 1400px;
     margin-left: auto;
     margin-right: auto;
@@ -49,7 +49,7 @@ h2 {
     padding: 40px;
     font-size: 40px;
     text-align: left;
-    color: black;
+    color: #222;
     width: 800px;
     float: left;
     box-sizing: border-box;
@@ -78,7 +78,7 @@ h2 {
     padding-left: 0px;
     font-size: 30px;
     text-align: left;
-    color: black;
+    color: #222;
     width: 600px;
     float: left;
     box-sizing: border-box;
@@ -102,6 +102,7 @@ h2 {
     border-bottom: 1px solid #dddddd;
     font-size: 50px;
     vertical-align: top;
+    color: #222;
 }
 
 .table-courses {
@@ -126,7 +127,7 @@ td {
     padding: 30px;
     background: #efeeee;
     border-top: 8px solid #d91516;
-    color: black;
+    color: #222;
     display: inline-block;
 }
 
@@ -138,7 +139,7 @@ td {
 #div-weather {
     background: #efeeee;
     border-top: 8px solid #d91516;
-    color: black;
+    color: #222;
     font-size: 50px;
     position: absolute;
     width: 500px;
@@ -173,7 +174,7 @@ td {
     padding: 10px;
     background: #efeeee;
     border-top: 8px solid #d91516;
-    color: black;
+    color: #222;
     font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
@@ -197,7 +198,7 @@ td {
 }
 
 #div-runner-next {
-    background: black;
+    background: #222;
     width: 218px;
     color: white;
     font-size: 30px;
@@ -205,4 +206,14 @@ td {
     position: absolute;
     top: -45px;
     left: 0px;
+}
+
+marquee {
+    font-family: Roboto, sans-serif;
+    font-size: 36px;
+    background: #efeeee;
+    border-top: 8px solid #d91516;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #111;
 }
