@@ -5,6 +5,8 @@ body {
     background-position: center;
     font-family: Roboto, sans-serif;
     box-sizing: border-box;
+    overflow: hidden;
+    color: #222;
 }
 
 .div-title {
@@ -53,8 +55,9 @@ h2 {
     width: 800px;
     float: left;
     box-sizing: border-box;
-    height: 500px;
+    height: 320px;
     line-height: 52px;
+    padding-bottom: 20px;
 }
 
 .div-intro-footer {
@@ -64,9 +67,7 @@ h2 {
     padding: 5px; 
     float: none; 
     background: #efeeee; 
-    font-weight: bold; 
-    color: black;
-    text-align: right;
+    text-align: center;
     padding-right: 40px;
     padding-bottom: 30px;
     color: #666;
@@ -82,12 +83,13 @@ h2 {
     width: 600px;
     float: left;
     box-sizing: border-box;
-    height: 500px;
+    height: 320px;
+    padding-bottom: 20px;
 }
 
 .table-intro {
     width: 710px;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .table-intro tr td:first-child {
@@ -100,7 +102,7 @@ h2 {
 
 .table-intro td, .table-courses td {
     border-bottom: 1px solid #dddddd;
-    font-size: 50px;
+    font-size: 40px;
     vertical-align: top;
     color: #222;
 }
@@ -140,7 +142,7 @@ td {
     background: #efeeee;
     border-top: 8px solid #d91516;
     color: #222;
-    font-size: 50px;
+    font-size: 40px;
     position: absolute;
     width: 500px;
     right: 120px;
@@ -154,11 +156,11 @@ td {
 }
 
 #div-weather h1 {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #div-weather td {
-    font-size: 40px;
+    font-size: 36px;
     border-bottom: 1px solid #dddddd;
 }
 
@@ -210,10 +212,17 @@ td {
 
 marquee {
     font-family: Roboto, sans-serif;
-    font-size: 36px;
+    font-size: 40px;
     background: #efeeee;
     border-top: 8px solid #d91516;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: #111;
+    position: absolute;
+    bottom: 120px;
+    margin-left: 0px;
+    text-transform: uppercase;
+    width: 1920px;
+    color: #222;
+    left: 0px;
 }
