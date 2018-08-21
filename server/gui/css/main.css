@@ -216,8 +216,7 @@ marquee {
     background: #efeeee;
     border-top: 8px solid #d91516;
     padding-top: 15px;
-    padding-bottom: 15px;
-    color: #111;
+    padding-bottom: 15px;    
     position: absolute;
     bottom: 120px;
     margin-left: 0px;
@@ -225,4 +224,61 @@ marquee {
     width: 1920px;
     color: #222;
     left: 0px;
+}
+
+#div-start-list {
+    font-family: Roboto, sans-serif;
+    font-size: 40px;
+    width: 1000px;
+    position: absolute;
+    left: calc((100% - 1000px)/2);
+    top: 200px;    
+    height: calc(1080px - 400px);
+}
+
+#div-start-list-header {
+    margin-bottom: 20px;
+    background: #efeeee;
+    border-top: 8px solid #d91516;
+    padding: 15px;
+}
+
+#div-content-scroll {
+    overflow: hidden;
+    height: 565px;
+}
+
+.div-number, .div-name, .div-country, .div-starttime {
+    display: inline-block;
+}
+
+.div-number {
+    width: 70px;
+    background: #d91516;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: right;
+    margin-top: 8px;    
+}
+
+.div-name {
+    width: 600px;
+    background: white;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.div-country {
+    width: 150px;
+    background: white;
+}
+
+.div-starttime {
+    background: #efeeee;
+    font-weight: bold;
+    width: 125px;
+    padding-right: 15px;
+    text-align: right;
 }

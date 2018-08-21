@@ -12,8 +12,8 @@ class Controller {
         else if (command == "credits") this.loadHTML('/content/credits.html');
         else if (command == "weather") this.makeWeather(params[1], params[2], params[3], params[4], params[5]);
         else if (command == "text") this.makeText(params[1], params[2]);
-        else if (command == "refresh") this.refreshLive(params[1], params[2]);
-        else if (command == "start") this.startList();
+        else if (command == "refresh") this.refreshLive(params[1]);
+        else if (command == "start") this.showStartList();
         else if (command == "rStart") this.runnerStart(params[1]);
     }
 
@@ -45,35 +45,60 @@ class Controller {
         "</div>");
     };
 
-    refreshLive(cat, compId) {
-        let url = "http://liveresultat.orientering.se/api.php?comp=" + compId + "&method=getclassresults&unformattedTimes=true&class=" + cat;
-        this.cat = cat;
-        this.compId = compId;
+    refreshLive(cat) {
+        let url = "http://localhost:8000/category/" + cat + "/startList";
+        this.cat = cat;        
         let self = this;
         $.ajax({
             url: url
         }).done(function(data) {
             console.log(data);
             try {
-                if (data.status == "OK") {
-                    self.results = data.results;
-                    self.splitControls = data.splitcontrols;
-                    console.log(self.results);
-                    console.log(self.splitControls);
-                } else {
-                    console.log("Error reading data!")
-                }
+                self.startList = data;                                                    
             } catch (c) {
                 console.log("Error - refreshLive", e);
             }
         });
     };
 
-    startList() {
-        // order by start times
+    showStartList() {        
         // generate list
+        let list = "";
+        for (let i = 0; i < this.startList.length; i++) {
+
+            let startTime = this.startList[i].startTime / 60 + ":00";
+
+            list += "<div class='div-number' id='row" + i + "'>" + this.startList[i].startNumber + "</div>";
+            list += "<div class='div-name'>" + this.startList[i].name + "</div>";
+            list += "<div class='div-country'>" + this.startList[i].country + "</div>";
+            list += "<div class='div-starttime'>" + startTime + "</div><br>";
+        }
+
+        let html = "<div id='div-start-list'> \
+            <div id='div-start-list-header'><b>SEEOC SPRINT</b> - START LIST - " + this.cat + "</div> \
+            <div id='div-content-scroll'>" + list + "<div style='height: 8px'></div> \
+            </div> \
+        </div>";
+
         // display list
+        $('body').html(html);
+
         // animate
+        let i = this.startList.length;
+        let yoffset = $("#div-content-scroll").offset().top + 8;
+        let target = $('#row10');         
+        let scrollInterval = target.offset().top - yoffset;
+        for (let j = 1; j <= Math.ceil(i / 10); j++) {
+            console.log(j);
+            setTimeout(() => {                
+                let targetId = j * 10;                                       
+                console.log(j, targetId, yoffset, target.offset().top);
+                $('#div-content-scroll').stop().animate({
+                    scrollTop: scrollInterval * j
+                }, 1000);
+    
+            }, j * 10000);
+        };
     }
 
     runnerStart(min) {
