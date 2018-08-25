@@ -60,7 +60,17 @@ $(document).ready(function() {
     $("#start").click(function() {
         console.log("Clicked: Start list");
         ws.send("start");
-    })
+    });
+
+    $("#intermediate1").click(function() {
+        console.log("Clicked: Intermediate 1");
+        ws.send("intermediate1");
+    });  
+
+    $("#finish").click(function() {
+        console.log("Clicked: Results");
+        ws.send("finish");
+    });    
 
     $("#rStart").click(function() {
         console.log("Clicked: Runner Start");

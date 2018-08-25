@@ -14,6 +14,8 @@ class Controller {
         else if (command == "text") this.makeText(params[1], params[2]);
         else if (command == "refresh") this.refreshLive(params[1]);
         else if (command == "start") this.showStartList();
+        else if (command == "intermediate1") this.showIntermediate();
+        else if (command == "finish") this.showResults();
         else if (command == "rStart") this.runnerStart(params[1]);
     }
 
@@ -46,7 +48,8 @@ class Controller {
     };
 
     refreshLive(cat) {
-        let url = "http://localhost:8000/category/" + cat + "/startList";
+        // refresh start list
+        let url = "http://192.168.8.184:8080/category/" + cat + "/startList";
         this.cat = cat;        
         let self = this;
         $.ajax({
@@ -56,10 +59,137 @@ class Controller {
             try {
                 self.startList = data;                                                    
             } catch (c) {
-                console.log("Error - refreshLive", e);
+                console.log("Error - refreshLive - start list", e);
             }
         });
+
+        // refresh finish time
+        // http://192.168.8.184:8080/category/W45%20SEEMOC/results
+
+        url = "http://192.168.8.184:8080/category/" + cat + "/officialResults";
+        this.cat = cat;        
+        self = this;
+        $.ajax({
+            url: url
+        }).done(function(data) {
+            console.log(data);
+            try {
+                self.results = data;                                                    
+            } catch (c) {
+                console.log("Error - refreshLive - results", e);
+            }
+        });
+
+        // refresh finish time
+        // http://192.168.8.184:8080/category/W45%20SEEMOC/results
+
+        url = "http://192.168.8.184:8080/category/" + cat + "/results?station=71";
+        this.cat = cat;        
+        self = this;
+        $.ajax({
+            url: url
+        }).done(function(data) {
+            console.log(data);
+            try {
+                self.interResults = data;                                                    
+            } catch (c) {
+                console.log("Error - refreshLive - results", e);
+            }
+        });        
     };
+
+    
+    showResults() {
+        // generate list
+        let list = "";
+        for (let i = 0; i < this.results.length; i++) {
+
+            let result = Math.floor(this.results[i].competitionTime / 60) + ":" + this.lZ(this.results[i].competitionTime % 60);
+            let place = i + 1;
+
+            if (this.results[i].finishType != "OK") {
+                place = this.results[i].finishType;
+                result = "--:--";
+            };
+
+            list += "<div class='div-number' id='row" + i + "'>" + place + "</div>";
+            list += "<div class='div-name'>" + this.results[i].name + "</div>";
+            list += "<div class='div-country'>" + this.results[i].country + "</div>";
+            list += "<div class='div-starttime'>" + result + "</div><br>";
+        }
+
+        let html = "<div id='div-start-list'> \
+            <div id='div-start-list-header'><b>SEEOC SPRINT</b> - RESULTS - " + this.cat + "</div> \
+            <div id='div-content-scroll'>" + list + "<div style='height: 8px'></div> \
+            </div> \
+        </div>";
+
+        // display list
+        $('body').html(html);
+
+        // animate
+        let i = this.startList.length;
+        let yoffset = $("#div-content-scroll").offset().top + 8;
+        let target = $('#row10');         
+        let scrollInterval = target.offset().top - yoffset;
+        for (let j = 1; j <= Math.ceil(i / 10); j++) {
+            console.log(j);
+            setTimeout(() => {                
+                let targetId = j * 10;                                       
+                console.log(j, targetId, yoffset, target.offset().top);
+                $('#div-content-scroll').stop().animate({
+                    scrollTop: scrollInterval * j
+                }, 1000);
+
+            }, j * 10000);
+        };        
+    }
+
+    showIntermediate() {
+        // generate list
+        let list = "";
+        for (let i = 0; i < this.interResults.length; i++) {
+
+            let result = Math.floor(this.interResults[i].competitionTime / 60) + ":" + this.lZ(this.interResults[i].competitionTime % 60);
+            let place = i + 1;
+
+            if ((this.interResults[i].finishType != "OK") && (this.interResults[i].finishType != "Active")) {
+                place = this.interResults[i].finishType;
+                result = "--:--";
+            };
+
+            list += "<div class='div-number' id='row" + i + "'>" + place + "</div>";
+            list += "<div class='div-name'>" + this.interResults[i].name + "</div>";
+            list += "<div class='div-country'>" + this.interResults[i].country + "</div>";
+            list += "<div class='div-starttime'>" + result + "</div><br>";
+        }
+
+        let html = "<div id='div-start-list'> \
+            <div id='div-start-list-header'><b>SEEOC SPRINT</b> - ARENA PASSAGE - " + this.cat + "</div> \
+            <div id='div-content-scroll'>" + list + "<div style='height: 8px'></div> \
+            </div> \
+        </div>";
+
+        // display list
+        $('body').html(html);
+
+        // animate
+        let i = this.startList.length;
+        let yoffset = $("#div-content-scroll").offset().top + 8;
+        let target = $('#row10');         
+        let scrollInterval = target.offset().top - yoffset;
+        for (let j = 1; j <= Math.ceil(i / 10); j++) {
+            console.log(j);
+            setTimeout(() => {                
+                let targetId = j * 10;                                       
+                console.log(j, targetId, yoffset, target.offset().top);
+                $('#div-content-scroll').stop().animate({
+                    scrollTop: scrollInterval * j
+                }, 1000);
+
+            }, j * 10000);
+        };        
+    }
 
     showStartList() {        
         // generate list
@@ -111,6 +241,9 @@ class Controller {
             let d = new Date();
             runnerTime = ((d.getHours() * 60 + d.getMinutes()) * 60 + d.getSeconds()) * 100;
         }
+
+        console.log(runnerTime, zeroStartTime);
+
         let runnerId = this.findClosestRunner(runnerTime);
         // we have found our next runner
         if (runnerId >= 0) {
